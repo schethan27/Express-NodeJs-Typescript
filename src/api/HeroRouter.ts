@@ -1,8 +1,7 @@
-import {Router,Request,Response,NextFunction} from 'express';
-import Hero = require('../model/Hero');
+import { Router, Request, Response, NextFunction } from "express";
 
 export class HeroRouter {
-  router: Router
+  router: Router;
 
   /**
    * Initialize the HeroRouter
@@ -15,22 +14,20 @@ export class HeroRouter {
   /**
    * GET all Heroes.
    */
-private getAll(req: Request, res: Response, next: NextFunction) {
-    res.send("");
+  private getAll(req: Request, res: Response, next: NextFunction) {
+    res.send("STRIng");
   }
-    
+
   /**
    * Take each handler, and attach to one of the Express.Router's
    * endpoints.
    */
   init() {
-    this.router.get('/', this.getAll);
+    this.router.get("/", this.getAll);
   }
-
 }
 
 // Create the HeroRouter, and export its configured Express.Router
-const heroRoutes:HeroRouter = new HeroRouter();
-
+const heroRoutes: HeroRouter = new HeroRouter();
 
 export default heroRoutes.router;
